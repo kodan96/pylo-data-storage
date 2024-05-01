@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --Gradient: hsl(6, 100%, 80%); 
+    --to: hsl(335, 100%, 65%);
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+body {
+    background-image: url(img/bg-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.tools {
+    animation: fadeIn 2s ease;
+    margin-top: 8rem;
+    width: 90%;
+    background-color: var(--Dark-Blue);
+    padding: 3rem;
+    margin-inline: auto;
+    border-radius: 10px 120px 10px 10px;
+}
+
+.icon-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--Very-Dark-Blue);
+}
+
+.tool-wrap {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.tool-wrap .icon-bg:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+.data-section {
+    width: min-content;
+    width: 100%;
+}
+
+.data {
+    position: relative;
+    width: 90%;
+    margin-inline: auto;
+    padding: 3rem 2rem 5rem;
+    text-align: center;
+    color: var(--Pale-Blue);
+    background-color: var(--Dark-Blue);
+    border-radius: 10px;
+    margin-top: 1rem;
+    animation: fadeIn 2s ease;
+
+    p {
+        font-size: .9em;
+    }
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: var(--Very-Dark-Blue);
+    margin-block: 1rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding-inline: 5px;
+
+}
+
+.inner-progress-bar {
+    height: 70%;
+    width: 82%;
+    background: linear-gradient(to left, var(--to), var(--Gradient));
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    animation: slideIn 2s forwards;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.circle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--Pale-Blue);
+    position: absolute;
+    right: 3px;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+@keyframes slideIn {
+    0% {
+        width: 5%;
+    }
+    100% {
+        width: 82%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fadeTwo {
+    0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+}
+
+
+.size-left {
+    position: absolute;
+    bottom: -50px;
+    right: 50%;
+    transform: translateX(50%);
+    max-width: 80%;
+    animation: fadeTwo 2s ease;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    p {
+        padding: 1rem 2rem;
+        color: var(--Grayish-Blue);
+        background-color: #fff;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: .8rem;
+        white-space: nowrap;
+    }
+
+}
+
+.large-font {
+    font-size: 3rem;
+    margin-right: 1rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Blue);
+    width: max-content;
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        justify-content: center;
+        background-image: url(img/bg-desktop.png);
+        background-size: cover;
+        background-position: center;
+    }
+    main {
+        display: flex;
+        width: 75%;
+        margin: auto;
+        justify-content: center;
+        align-items: last baseline;
+        gap: 2rem;
+    }
+
+    .tools {
+        max-width: 400px;
+        margin: 0;
+        flex-grow: 0;
+    }
+
+    .data {
+        text-align: left;
+        margin: 0;
+        min-width: 350px;
+        padding: 3rem 2rem;
+        width: 100%;
+
+    }
+
+    .data-section {
+        flex: 1;
+    }
+
+    .size-left {
+        position: absolute;
+        right: 2rem;
+        top: -50px;
+        transform: translateX(0);
+        border-radius: 10px 10px 0 10px;
+        height: fit-content;
+    }
+
+    .size-left::after {
+        content: "";
+        position: absolute;
+        top: 60px;
+        right: 0;
+        border-right: 25px solid #fff;
+        border-top: 25px solid #fff;
+        border-bottom: 25px solid transparent;
+
+        
+    }
+}
+
